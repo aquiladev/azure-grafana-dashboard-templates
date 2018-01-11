@@ -1,4 +1,28 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_AZURE",
+      "label": "Azure",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "grafana-azure-monitor-datasource",
+      "pluginName": "Azure Monitor"
+    },
+    {
+      "name": "RG_NAME",
+      "type": "constant",
+      "label": "Resource Group Name",
+      "value": "",
+      "description": "Resource Group Name"
+    },
+    {
+      "name": "RESOURCE_NAME",
+      "type": "constant",
+      "label": "Resource Name",
+      "value": "",
+      "description": "Resource Name"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -28,7 +52,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -84,8 +108,8 @@
                 ],
                 "metricDefinition": "Microsoft.Web/sites",
                 "metricName": "FunctionExecutionCount",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -137,7 +161,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 2,
           "legend": {
@@ -193,8 +217,8 @@
                 ],
                 "metricDefinition": "Microsoft.Web/sites",
                 "metricName": "FunctionExecutionUnits",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -258,7 +282,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 3,
           "legend": {
@@ -314,8 +338,8 @@
                 ],
                 "metricDefinition": "Microsoft.Web/sites",
                 "metricName": "BytesReceived",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -367,7 +391,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 4,
           "legend": {
@@ -423,8 +447,8 @@
                 ],
                 "metricDefinition": "Microsoft.Web/sites",
                 "metricName": "BytesSent",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -488,7 +512,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 5,
           "legend": {
@@ -544,8 +568,8 @@
                 ],
                 "metricDefinition": "Microsoft.Web/sites",
                 "metricName": "MemoryWorkingSet",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -597,7 +621,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 6,
           "legend": {
@@ -653,8 +677,8 @@
                 ],
                 "metricDefinition": "Microsoft.Web/sites",
                 "metricName": "Http5xx",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },

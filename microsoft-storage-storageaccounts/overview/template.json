@@ -1,4 +1,28 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_AZURE",
+      "label": "Azure",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "grafana-azure-monitor-datasource",
+      "pluginName": "Azure Monitor"
+    },
+    {
+      "name": "RG_NAME",
+      "type": "constant",
+      "label": "Resource Group Name",
+      "value": "",
+      "description": "Resource Group Name"
+    },
+    {
+      "name": "RESOURCE_NAME",
+      "type": "constant",
+      "label": "Resource Name",
+      "value": "",
+      "description": "Resource Name (storage account)"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -28,7 +52,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -88,8 +112,8 @@
                 ],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "Availability",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -141,7 +165,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 5,
           "legend": {
@@ -188,8 +212,8 @@
                 "dimensions": [],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "UsedCapacity",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -241,7 +265,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 2,
           "legend": {
@@ -305,8 +329,8 @@
                 ],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "Transactions",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -370,7 +394,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 3,
           "legend": {
@@ -430,8 +454,8 @@
                 ],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "Ingress",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -483,7 +507,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 4,
           "legend": {
@@ -543,8 +567,8 @@
                 ],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "Egress",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -608,7 +632,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 6,
           "legend": {
@@ -668,8 +692,8 @@
                 ],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "SuccessServerLatency",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -721,7 +745,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "{dataSourceName}",
+          "datasource": "${DS_AZURE}",
           "fill": 1,
           "id": 7,
           "legend": {
@@ -781,8 +805,8 @@
                 ],
                 "metricDefinition": "Microsoft.Storage/storageAccounts",
                 "metricName": "SuccessE2ELatency",
-                "resourceGroup": "{resourceGroupName}",
-                "resourceName": "{resourceName}",
+                "resourceGroup": "${RG_NAME}",
+                "resourceName": "${RESOURCE_NAME}",
                 "timeGrain": "1",
                 "timeGrainUnit": "minute"
               },
@@ -874,6 +898,6 @@
     ]
   },
   "timezone": "",
-  "title": "storage template",
+  "title": "Azure Storage",
   "version": 4
 }
